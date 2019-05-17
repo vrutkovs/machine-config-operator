@@ -58,7 +58,6 @@ contents:
       backup_certs
       remove_certs
       gen_config
-      download_cert_recover_template
       DISCOVERY_DOMAIN=$(grep -oP '(?<=discovery-srv=).*[^"]' $ASSET_DIR/backup/etcd-member.yaml )
       if [ -z "$DISCOVERY_DOMAIN" ]; then
         echo "Discovery domain can not be extracted from $ASSET_DIR/backup/etcd-member.yaml"
