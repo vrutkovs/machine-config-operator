@@ -265,13 +265,11 @@ func TestIgnValidationGenerateRenderedMachineConfig(t *testing.T) {
 	mcp := helpers.NewMachineConfigPool("test-cluster-master", helpers.MasterSelector, nil, "")
 	files := []igntypes.File{{
 		Node: igntypes.Node{
-			Filesystem: "root",
-			Path:       "/dummy/0",
+			Path: "/dummy/0",
 		},
 	}, {
 		Node: igntypes.Node{
-			Filesystem: "root",
-			Path:       "/dummy/1",
+			Path: "/dummy/1",
 		},
 	}}
 	mcs := []*mcfgv1.MachineConfig{
@@ -302,13 +300,11 @@ func TestUpdatesGeneratedMachineConfig(t *testing.T) {
 	mcp := helpers.NewMachineConfigPool("test-cluster-master", helpers.MasterSelector, nil, "")
 	files := []igntypes.File{{
 		Node: igntypes.Node{
-			Filesystem: "root",
-			Path:       "/dummy/0",
+			Path: "/dummy/0",
 		},
 	}, {
 		Node: igntypes.Node{
-			Filesystem: "root",
-			Path:       "/dummy/1",
+			Path: "/dummy/1",
 		},
 	}}
 	mcs := []*mcfgv1.MachineConfig{
@@ -368,13 +364,11 @@ func TestDoNothing(t *testing.T) {
 	mcp := helpers.NewMachineConfigPool("test-cluster-master", helpers.MasterSelector, nil, "")
 	files := []igntypes.File{{
 		Node: igntypes.Node{
-			Filesystem: "root",
-			Path:       "/dummy/0",
+			Path: "/dummy/0",
 		},
 	}, {
 		Node: igntypes.Node{
-			Filesystem: "root",
-			Path:       "/dummy/1",
+			Path: "/dummy/1",
 		},
 	}}
 	mcs := []*mcfgv1.MachineConfig{

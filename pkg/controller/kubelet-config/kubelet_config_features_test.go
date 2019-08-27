@@ -23,7 +23,7 @@ func TestFeatureGateDrift(t *testing.T) {
 			if err != nil {
 				t.Errorf("could not generate kubelet config from templates %v", err)
 			}
-			dataURL, _ := dataurl.DecodeString(kubeletConfig.Contents.Source)
+			dataURL, _ := dataurl.DecodeString(*kubeletConfig.Contents.Source)
 			originalKubeConfig, _ := decodeKubeletConfig(dataURL.Data)
 			defaultFeatureGates, err := ctrl.generateFeatureMap(createNewDefaultFeatureGate())
 			if err != nil {

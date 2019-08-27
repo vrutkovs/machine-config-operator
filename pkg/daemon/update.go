@@ -767,7 +767,7 @@ func getFileOwnership(file igntypes.File) (int, int, error) {
 			if err != nil {
 				return uid, gid, fmt.Errorf("failed to retrieve UserID for username: %v", file.User.Name)
 			}
-			glog.V(2).Infof("Retrieved UserId: %s for username: %s", osUser.Uid, file.User.Name)
+			glog.V(2).Infof("Retrieved UserId: %s for username: %s", osUser.Uid, *file.User.Name)
 			uid, _ = strconv.Atoi(osUser.Uid)
 		}
 	}
@@ -779,7 +779,7 @@ func getFileOwnership(file igntypes.File) (int, int, error) {
 			if err != nil {
 				return uid, gid, fmt.Errorf("failed to retrieve GroupID for group: %v", file.Group.Name)
 			}
-			glog.V(2).Infof("Retrieved GroupID: %s for group: %s", osGroup.Gid, file.Group.Name)
+			glog.V(2).Infof("Retrieved GroupID: %s for group: %s", osGroup.Gid, *file.Group.Name)
 			gid, _ = strconv.Atoi(osGroup.Gid)
 		}
 	}

@@ -57,7 +57,7 @@ func TestOverwrittenFile(t *testing.T) {
 		t.Errorf("Could not Lstat file: %v", err)
 	}
 	fileMode := int(fi.Mode().Perm())
-
+	source := dataurl.EncodeBytes([]byte("hello world\n"))
 	// validate single file
 	files := []igntypes.File{
 		{
@@ -66,7 +66,7 @@ func TestOverwrittenFile(t *testing.T) {
 			},
 			FileEmbedded1: igntypes.FileEmbedded1{
 				Contents: igntypes.FileContents{
-					Source: dataurl.EncodeBytes([]byte("hello world\n")),
+					Source: &source,
 				},
 				Mode: &fileMode,
 			},
@@ -77,6 +77,7 @@ func TestOverwrittenFile(t *testing.T) {
 		t.Errorf("Invalid files")
 	}
 
+	sourceOverwritten := dataurl.EncodeBytes([]byte("hello world\n"))
 	// validate overwritten file
 	files = []igntypes.File{
 		{
@@ -85,7 +86,7 @@ func TestOverwrittenFile(t *testing.T) {
 			},
 			FileEmbedded1: igntypes.FileEmbedded1{
 				Contents: igntypes.FileContents{
-					Source: dataurl.EncodeBytes([]byte("hello\n")),
+					Source: &sourceOverwritten,
 				},
 				Mode: &fileMode,
 			},
@@ -96,7 +97,7 @@ func TestOverwrittenFile(t *testing.T) {
 			},
 			FileEmbedded1: igntypes.FileEmbedded1{
 				Contents: igntypes.FileContents{
-					Source: dataurl.EncodeBytes([]byte("hello world\n")),
+					Source: &source,
 				},
 				Mode: &fileMode,
 			},

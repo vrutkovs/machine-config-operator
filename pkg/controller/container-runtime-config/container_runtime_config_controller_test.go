@@ -353,7 +353,7 @@ func verifyRegistriesConfigContents(t *testing.T, mc *mcfgv1.MachineConfig, mcNa
 	require.Len(t, mc.Spec.Config.Storage.Files, 1)
 	file := mc.Spec.Config.Storage.Files[0]
 	assert.Equal(t, registriesConfigPath, file.Node.Path)
-	registriesConf, err := dataurl.DecodeString(file.Contents.Source)
+	registriesConf, err := dataurl.DecodeString(*file.Contents.Source)
 	require.NoError(t, err)
 	assert.Equal(t, string(expectedRegistriesConf), string(registriesConf.Data))
 }

@@ -178,7 +178,7 @@ func TestApplyMachineConfig(t *testing.T) {
 				Config: igntypes.Config{
 					Passwd: igntypes.Passwd{
 						Users: []igntypes.PasswdUser{{
-							HomeDir: "/home/dummy",
+							Name: "dummy",
 						}},
 					},
 				},
@@ -202,7 +202,7 @@ func TestApplyMachineConfig(t *testing.T) {
 					Config: igntypes.Config{
 						Passwd: igntypes.Passwd{
 							Users: []igntypes.PasswdUser{{
-								HomeDir: "/home/dummy",
+								Name: "dummy",
 							}},
 						},
 					},
@@ -221,7 +221,7 @@ func TestApplyMachineConfig(t *testing.T) {
 					Config: igntypes.Config{
 						Passwd: igntypes.Passwd{
 							Users: []igntypes.PasswdUser{{
-								HomeDir: "/home/dummy-prev",
+								Name: "dummy-prev",
 							}},
 						},
 					},
@@ -234,7 +234,7 @@ func TestApplyMachineConfig(t *testing.T) {
 				Config: igntypes.Config{
 					Passwd: igntypes.Passwd{
 						Users: []igntypes.PasswdUser{{
-							HomeDir: "/home/dummy",
+							Name: "dummy",
 						}},
 					},
 				},
@@ -258,7 +258,7 @@ func TestApplyMachineConfig(t *testing.T) {
 					Config: igntypes.Config{
 						Passwd: igntypes.Passwd{
 							Users: []igntypes.PasswdUser{{
-								HomeDir: "/home/dummy",
+								Name: "dummy",
 							}},
 						},
 					},
