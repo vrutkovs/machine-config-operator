@@ -1189,17 +1189,17 @@ func checkUnits(units []igntypes.Unit) bool {
 	for _, u := range units {
 		for j := range u.Dropins {
 			path := filepath.Join(pathSystemd, u.Name+".d", u.Dropins[j].Name)
-			if status := checkFileContentsAndMode(path, []byte(u.Dropins[j].Contents), defaultFilePermissions); !status {
+			if status := checkFileContentsAndMode(path, []byte(*u.Dropins[j].Contents), defaultFilePermissions); !status {
 				return false
 			}
 		}
 
-		if u.Contents == "" {
+		if *u.Contents == "" {
 			continue
 		}
 
 		path := filepath.Join(pathSystemd, u.Name)
-		if u.Mask {
+		if *u.Mask {
 			link, err := filepath.EvalSymlinks(path)
 			if err != nil {
 				glog.Errorf("state validation: error while evaluation symlink for path: %q, err: %v", path, err)
@@ -1210,7 +1210,7 @@ func checkUnits(units []igntypes.Unit) bool {
 				return false
 			}
 		}
-		if status := checkFileContentsAndMode(path, []byte(u.Contents), defaultFilePermissions); !status {
+		if status := checkFileContentsAndMode(path, []byte(*u.Contents), defaultFilePermissions); !status {
 			return false
 		}
 
@@ -1232,7 +1232,7 @@ func checkFiles(files []igntypes.File) bool {
 		if f.Mode != nil {
 			mode = os.FileMode(*f.Mode)
 		}
-		contents, err := dataurl.DecodeString(f.Contents.Source)
+		contents, err := dataurl.DecodeString(*f.Contents.Source)
 		if err != nil {
 			glog.Errorf("couldn't parse file: %v", err)
 			return false

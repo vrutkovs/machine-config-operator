@@ -17,10 +17,11 @@ require (
 	github.com/containerd/cgroups v0.0.0-20190710130057-d596c78861b1 // indirect
 	github.com/containers/image v2.0.0+incompatible
 	github.com/containers/storage v0.0.0-20190204185450-0b67c788f2d2
-	github.com/coreos/container-linux-config-transpiler v0.9.0
+	github.com/coreos/container-linux-config-transpiler v0.9.0 // indirect
+	github.com/coreos/fcct v0.2.0
 	github.com/coreos/go-systemd v0.0.0-20190620071333-e64a0ec8b42a // indirect
 	github.com/coreos/ignition v0.33.0
-	github.com/coreos/ignition/v2 v2.0.0
+	github.com/coreos/ignition/v2 v2.0.1
 	github.com/davecgh/go-spew v1.1.1
 	github.com/docker/distribution v2.7.1+incompatible // indirect
 	github.com/docker/docker v1.3.3 // indirect

@@ -21,15 +21,15 @@ func createNewKubeletIgnition(jsonConfig []byte) igntypes.Config {
 	mode := 0644
 	du := dataurl.New(jsonConfig, "text/plain")
 	du.Encoding = dataurl.EncodingASCII
+	duString := du.String()
 	tempFile := igntypes.File{
 		Node: igntypes.Node{
-			Filesystem: "root",
-			Path:       "/etc/kubernetes/kubelet.conf",
+			Path: "/etc/kubernetes/kubelet.conf",
 		},
 		FileEmbedded1: igntypes.FileEmbedded1{
 			Mode: &mode,
 			Contents: igntypes.FileContents{
-				Source: du.String(),
+				Source: &duString,
 			},
 		},
 	}

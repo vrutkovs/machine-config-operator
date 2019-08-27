@@ -430,7 +430,7 @@ func (ctrl *Controller) syncKubeletConfig(key string) error {
 		if err != nil {
 			return ctrl.syncStatusOnly(cfg, err, "could not generate the original Kubelet config: %v", err)
 		}
-		dataURL, err := dataurl.DecodeString(originalKubeletIgn.Contents.Source)
+		dataURL, err := dataurl.DecodeString(*originalKubeletIgn.Contents.Source)
 		if err != nil {
 			return ctrl.syncStatusOnly(cfg, err, "could not decode the original Kubelet source string: %v", err)
 		}
