@@ -20,7 +20,7 @@ require (
 	github.com/coreos/container-linux-config-transpiler v0.9.0
 	github.com/coreos/go-systemd v0.0.0-20190620071333-e64a0ec8b42a // indirect
 	github.com/coreos/ignition v0.26.0
-	github.com/coreos/ignition/v2 v2.0.0
+	github.com/coreos/ignition/v2 v2.0.0 // indirect
 	github.com/davecgh/go-spew v1.1.1
 	github.com/docker/distribution v2.7.1+incompatible // indirect
 	github.com/docker/docker v1.3.3 // indirect

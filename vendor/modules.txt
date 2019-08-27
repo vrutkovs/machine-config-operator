@@ -49,22 +49,13 @@ github.com/coreos/go-semver/semver
 github.com/coreos/go-systemd/unit
 github.com/coreos/go-systemd/dbus
 # github.com/coreos/ignition v0.26.0
-github.com/coreos/ignition/config/v2_2
-github.com/coreos/ignition/config/v2_2/types
 github.com/coreos/ignition/config/validate
-github.com/coreos/ignition/config/shared/errors
-github.com/coreos/ignition/config/util
-github.com/coreos/ignition/config/v2_1
-github.com/coreos/ignition/config/v2_1/types
-github.com/coreos/ignition/config/validate/report
-github.com/coreos/ignition/config/shared/validations
 github.com/coreos/ignition/config/validate/astjson
 github.com/coreos/ignition/config/validate/astnode
-github.com/coreos/ignition/config/v2_3_experimental/types
-github.com/coreos/ignition/config/v2_0
-github.com/coreos/ignition/config/v2_0/types
-github.com/coreos/ignition/config/v1
-github.com/coreos/ignition/config/v1/types
+github.com/coreos/ignition/config/validate/report
+github.com/coreos/ignition/config/v2_2/types
+github.com/coreos/ignition/config/shared/errors
+github.com/coreos/ignition/config/shared/validations
 # github.com/davecgh/go-spew v1.1.1
 github.com/davecgh/go-spew/spew
 # github.com/docker/docker v1.3.3
