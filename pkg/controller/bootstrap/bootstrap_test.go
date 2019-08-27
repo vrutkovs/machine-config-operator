@@ -15,7 +15,7 @@ import (
 
 	"k8s.io/apimachinery/pkg/util/diff"
 
-	igntypes "github.com/coreos/ignition/config/v3_0/types"
+	igntypes "github.com/coreos/ignition/v2/config/v3_0/types"
 	"github.com/openshift/machine-config-operator/lib/resourceread"
 )
 

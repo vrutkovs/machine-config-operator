@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	igntypes "github.com/coreos/ignition/config/v3_0/types"
+	igntypes "github.com/coreos/ignition/v2/config/v3_0/types"
 	mcfgv1 "github.com/openshift/machine-config-operator/pkg/apis/machineconfiguration.openshift.io/v1"
 	ctrlcommon "github.com/openshift/machine-config-operator/pkg/controller/common"
 	"github.com/stretchr/testify/assert"

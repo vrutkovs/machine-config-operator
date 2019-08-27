@@ -12,7 +12,7 @@ import (
 	"github.com/containers/image/docker/reference"
 	"github.com/containers/image/pkg/sysregistriesv2"
 	storageconfig "github.com/containers/storage/pkg/config"
-	igntypes "github.com/coreos/ignition/config/v3_0/types"
+	igntypes "github.com/coreos/ignition/v2/config/v3_0/types"
 	crioconfig "github.com/kubernetes-sigs/cri-o/pkg/config"
 	apicfgv1 "github.com/openshift/api/config/v1"
 	apioperatorsv1alpha1 "github.com/openshift/api/operator/v1alpha1"

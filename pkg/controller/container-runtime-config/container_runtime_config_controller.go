@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"time"
 
-	igntypes "github.com/coreos/ignition/config/v3_0/types"
+	igntypes "github.com/coreos/ignition/v2/config/v3_0/types"
 	"github.com/golang/glog"
 	"github.com/vincent-petithory/dataurl"
 	corev1 "k8s.io/api/core/v1"

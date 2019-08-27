@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	igntypes "github.com/coreos/ignition/config/v3_0/types"
+	igntypes "github.com/coreos/ignition/v2/config/v3_0/types"
 	yaml "github.com/ghodss/yaml"
 	"github.com/stretchr/testify/assert"
 	v1 "github.com/openshift/machine-config-operator/pkg/apis/machineconfiguration.openshift.io/v1"

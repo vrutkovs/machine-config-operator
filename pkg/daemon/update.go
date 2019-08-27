@@ -15,7 +15,7 @@ import (
 	"syscall"
 	"time"
 
-	igntypes "github.com/coreos/ignition/config/v3_0/types"
+	igntypes "github.com/coreos/ignition/v2/config/v3_0/types"
 	"github.com/golang/glog"
 	"github.com/google/renameio"
 	drain "github.com/openshift/kubernetes-drain"
