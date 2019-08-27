@@ -23,6 +23,7 @@ require (
 	github.com/coreos/go-systemd v0.0.0-20190620071333-e64a0ec8b42a // indirect
 	github.com/coreos/ignition v0.26.0
 	github.com/davecgh/go-spew v1.1.1
+	github.com/docker/distribution v2.7.1+incompatible // indirect
 	github.com/docker/docker v1.3.3 // indirect
 	github.com/docker/go-units v0.4.0 // indirect
 	github.com/evanphx/json-patch v4.5.0+incompatible // indirect
@@ -65,7 +66,6 @@ require (
 	golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45 // indirect
 	golang.org/x/sys v0.0.0-20190712062909-fae7ac547cb7 // indirect
 	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
-	golang.org/x/tools v0.0.0-20190711191110-9a621aea19f8 // indirect
 	google.golang.org/appengine v1.6.1 // indirect
 	google.golang.org/genproto v0.0.0-20190708153700-3bdd9d9f5532 // indirect
 	google.golang.org/grpc v1.22.0 // indirect
@@ -76,7 +76,6 @@ require (
 	k8s.io/apiserver v0.0.0-20190820063401-c43cd040845a // indirect
 	k8s.io/client-go v0.0.0-20190820062731-7e43eff7c80a
 	k8s.io/cloud-provider v0.0.0-20190704110555-622ee4517bee // indirect
-	k8s.io/code-generator v0.0.0-20190311093542-50b561225d70 // indirect
 	k8s.io/klog v0.3.3 // indirect
 	k8s.io/kube-openapi v0.0.0-20190709113604-33be087ad058 // indirect
 	k8s.io/kubelet v0.0.0-20190820102342-ebe40be4c334
