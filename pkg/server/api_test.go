@@ -7,7 +7,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	igntypes "github.com/coreos/ignition/config/v2_2/types"
+	igntypes "github.com/coreos/ignition/config/v3_0/types"
 )
 
 type mockServer struct {

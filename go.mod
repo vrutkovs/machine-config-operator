@@ -10,7 +10,6 @@ require (
 	github.com/Masterminds/semver v1.4.2 // indirect
 	github.com/Masterminds/sprig v2.20.0+incompatible
 	github.com/Microsoft/go-winio v0.4.12 // indirect
-	github.com/ajeddeloh/go-json v0.0.0-20170920214419-6a2fe990e083 // indirect
 	github.com/ajeddeloh/yaml v0.0.0-20170912190910-6b94386aeefd // indirect
 	github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf // indirect
 	github.com/apparentlymart/go-cidr v1.0.0
@@ -19,9 +18,9 @@ require (
 	github.com/containers/image v2.0.0+incompatible
 	github.com/containers/storage v0.0.0-20190204185450-0b67c788f2d2
 	github.com/coreos/container-linux-config-transpiler v0.9.0
-	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/go-systemd v0.0.0-20190620071333-e64a0ec8b42a // indirect
 	github.com/coreos/ignition v0.26.0
+	github.com/coreos/ignition/v2 v2.0.0
 	github.com/davecgh/go-spew v1.1.1
 	github.com/docker/distribution v2.7.1+incompatible // indirect
 	github.com/docker/docker v1.3.3 // indirect
@@ -36,7 +35,6 @@ require (
 	github.com/golang/protobuf v1.3.2 // indirect
 	github.com/google/gofuzz v1.0.0 // indirect
 	github.com/google/renameio v0.1.0
-	github.com/google/uuid v1.1.1 // indirect
 	github.com/googleapis/gnostic v0.3.0 // indirect
 	github.com/hashicorp/golang-lru v0.5.1 // indirect
 	github.com/huandu/xstrings v1.2.0 // indirect
