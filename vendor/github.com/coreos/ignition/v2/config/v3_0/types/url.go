@@ -19,21 +19,18 @@ import (
 
 	"github.com/vincent-petithory/dataurl"
 
-	"github.com/coreos/ignition/config/shared/errors"
+	"github.com/coreos/ignition/v2/config/shared/errors"
+	"github.com/coreos/ignition/v2/config/util"
 )
 
 func validateURL(s string) error {
-	// Empty url is valid, indicates an empty file
-	if s == "" {
-		return nil
-	}
 	u, err := url.Parse(s)
 	if err != nil {
 		return errors.ErrInvalidUrl
 	}
 
 	switch u.Scheme {
-	case "http", "https", "oem", "tftp":
+	case "http", "https", "tftp":
 		return nil
 	case "s3":
 		if v, ok := u.Query()["versionId"]; ok {
@@ -50,4 +47,11 @@ func validateURL(s string) error {
 	default:
 		return errors.ErrInvalidScheme
 	}
+}
+
+func validateURLNilOK(s *string) error {
+	if util.NilOrEmpty(s) {
+		return nil
+	}
+	return validateURL(*s)
 }
