@@ -10,14 +10,11 @@ require (
 	github.com/Masterminds/semver v1.4.2 // indirect
 	github.com/Masterminds/sprig v2.20.0+incompatible
 	github.com/Microsoft/go-winio v0.4.12 // indirect
-	github.com/ajeddeloh/yaml v0.0.0-20170912190910-6b94386aeefd // indirect
-	github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf // indirect
 	github.com/apparentlymart/go-cidr v1.0.0
 	github.com/ashcrow/osrelease v0.0.0-20180626175927-9b292693c55c
 	github.com/containerd/cgroups v0.0.0-20190710130057-d596c78861b1 // indirect
 	github.com/containers/image v2.0.0+incompatible
 	github.com/containers/storage v0.0.0-20190204185450-0b67c788f2d2
-	github.com/coreos/container-linux-config-transpiler v0.9.0 // indirect
 	github.com/coreos/fcct v0.2.0
 	github.com/coreos/go-systemd v0.0.0-20190620071333-e64a0ec8b42a // indirect
 	github.com/coreos/ignition v0.33.0
