@@ -63,13 +63,12 @@ func createIgnFile(path, content, fs string, mode int) igntypes.File {
 	return igntypes.File{
 		FileEmbedded1: igntypes.FileEmbedded1{
 			Contents: igntypes.FileContents{
-				Source: content,
+				Source: &content,
 			},
 			Mode: &mode,
 		},
 		Node: igntypes.Node{
-			Filesystem: fs,
-			Path:       path,
+			Path: path,
 		},
 	}
 }
@@ -364,14 +363,14 @@ func TestReconcileAfterBadMC(t *testing.T) {
 
 	// create a MC that contains a valid ignition config but is not reconcilable
 	mcadd := createMCToAddFile("add-a-file", "/etc/mytestconfs", "test", "root")
-	mcadd.Spec.Config.Networkd = igntypes.Networkd{
-		Units: []igntypes.Networkdunit{
-			igntypes.Networkdunit{
-				Name:     "test.network",
-				Contents: "test contents",
-			},
-		},
-	}
+	// mcadd.Spec.Config.Networkd = igntypes.Networkd{
+	// 	Units: []igntypes.Networkdunit{
+	// 		igntypes.Networkdunit{
+	// 			Name:     "test.network",
+	// 			Contents: "test contents",
+	// 		},
+	// 	},
+	// }
 
 	// grab the initial machineconfig used by the worker pool
 	// this MC is gonna be the one which is going to be reapplied once the bad MC is deleted
@@ -620,9 +619,9 @@ func TestCustomPool(t *testing.T) {
 	infraMCP.Spec.MachineConfigSelector = &mcSelector
 	infraMCP.Spec.MachineConfigSelector.MatchExpressions = []metav1.LabelSelectorRequirement{
 		metav1.LabelSelectorRequirement{
-			Key: "machineconfiguration.openshift.io/role",
+			Key:      "machineconfiguration.openshift.io/role",
 			Operator: metav1.LabelSelectorOpIn,
-			Values: []string{"worker", "infra"},
+			Values:   []string{"worker", "infra"},
 		},
 	}
 	_, err = cs.MachineConfigPools().Create(infraMCP)
