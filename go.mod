@@ -50,7 +50,7 @@ require (
 	go4.org v0.0.0-20191010144846-132d2879e1e9 // indirect
 	golang.org/x/time v0.0.0-20190921001708-c4c64cad1fd0
 	k8s.io/api v0.0.0-20191003035645-10e821c09743
-	k8s.io/apiextensions-apiserver v0.0.0-00010101000000-000000000000
+	k8s.io/apiextensions-apiserver v0.0.0-20191017190756-60deea82a242
 	k8s.io/apimachinery v0.0.0-20191003115452-c31ffd88d5d2
 	k8s.io/client-go v0.0.0-20190929040153-a39e818a0987
 	k8s.io/code-generator v0.0.0-20190927045949-f81bca4f5e85
