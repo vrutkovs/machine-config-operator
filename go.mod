@@ -35,8 +35,8 @@ require (
 	github.com/stretchr/testify v1.4.0
 	github.com/vincent-petithory/dataurl v0.0.0-20160330182126-9a301d65acbb
 	golang.org/x/time v0.0.0-20190921001708-c4c64cad1fd0
-	k8s.io/api v0.0.0-20191016225839-816a9b7df678
-	k8s.io/apimachinery v0.0.0-20191017185446-6e68a40eebf9
+	k8s.io/api v0.0.0-20190905175716-d9fae7ce8d9e
+	k8s.io/apimachinery v0.0.0-20190913080033-27d36303b655
 	k8s.io/client-go v0.0.0-20190929040153-a39e818a0987
 	k8s.io/code-generator v0.0.0-20190927045949-f81bca4f5e85
 	k8s.io/kubectl v0.0.0-20190831152136-eb175a4e3db6
@@ -44,8 +44,8 @@ require (
 )
 
 replace (
-	//	github.com/godbus/dbus => github.com/godbus/dbus v0.0.0-20190623212516-8a1682060722
-	//	github.com/opencontainers/runtime-spec => github.com/opencontainers/runtime-spec v0.1.2-0.20190408193819-a1b50f621a48
+	github.com/godbus/dbus => github.com/godbus/dbus v0.0.0-20190623212516-8a1682060722
+	github.com/opencontainers/runtime-spec => github.com/opencontainers/runtime-spec v0.1.2-0.20190408193819-a1b50f621a48
 	k8s.io/apiextensions-apiserver => github.com/openshift/kubernetes-apiextensions-apiserver v0.0.0-20190918161926-8f644eb6e783
 	k8s.io/apiserver => github.com/openshift/kubernetes-apiserver v0.0.0-20190918160949-bfa5e2e684ad
 	k8s.io/cli-runtime => github.com/openshift/kubernetes-cli-runtime v0.0.0-20190918162238-f783a3654da8
