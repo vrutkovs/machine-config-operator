@@ -103,6 +103,7 @@ github.com/coreos/vcontext v0.0.0-20190529201340-22b159166068/go.mod h1:E+6hug9b
 github.com/coreos/vcontext v0.0.0-20190605182717-e9c4ffaa1f6a h1:AdSIR3t2/3oreDLKnsCk8Lu5L3+OKlt9Yu7equBivmE=
 github.com/coreos/vcontext v0.0.0-20190605182717-e9c4ffaa1f6a/go.mod h1:E+6hug9bFSe0KZ2ZAzr8M9F5JlArJjv5D1JS7KSkPKE=
 github.com/cpuguy83/go-md2man v1.0.10/go.mod h1:SmD6nW6nTyfqj6ABTjUi3V3JVMnlJmwcJI5acqYI6dE=
+github.com/cri-o/cri-o v1.15.2 h1:EnnlS49xOnco4xC9aKkVnj2wztceugtZY2TdWvCMgis=
 github.com/davecgh/go-spew v0.0.0-20151105211317-5215b55f46b2/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
