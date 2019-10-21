@@ -1,14 +1,14 @@
 %define debug_package %{nil}
-%global commit          4e75a8f20e5cf44374fd1bf3b3df997b8689d3ff
+%global commit          8fbc72654123150fb0bc26316dead0ebe009915e
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           machine-config-daemon
-Version:        4.0.0
-Release:        1.rhaos4.2.git%{shortcommit}%{?dist}
-Summary:        https://github.com/openshift/machine-config-operator
+Version:        4.3.0
+Release:        1.rhaos4.3.git%{shortcommit}%{?dist}
+Summary:        https://github.com/vrutkovs/machine-config-operator
 License:        ASL 2.0
-URL:            https://github.com/openshift/machine-config-operator
-Source0:        https://github.com/openshift/machine-config-operator/archive/%{commit}/machine-config-operator-%{shortcommit}.tar.gz
+URL:            https://github.com/vrutkovs/machine-config-operator
+Source0:        https://github.com/vrutkovs/machine-config-operator/archive/%{commit}/machine-config-operator-%{shortcommit}.tar.gz
 
 BuildRequires:  git
 BuildRequires:  %{?go_compiler:compiler(go-compiler)}%{!?go_compiler:golang >= 1.6.2}
