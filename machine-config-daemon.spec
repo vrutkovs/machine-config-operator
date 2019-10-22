@@ -1,10 +1,10 @@
 %define debug_package %{nil}
-%global commit          8fbc72654123150fb0bc26316dead0ebe009915e
+%global commit          48daa5067cc6dba27002f04bf3608231597bc0c5
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           machine-config-daemon
 Version:        4.3.0
-Release:        1.rhaos4.3.git%{shortcommit}%{?dist}
+Release:        2.rhaos4.3.git%{shortcommit}%{?dist}
 Summary:        https://github.com/vrutkovs/machine-config-operator
 License:        ASL 2.0
 URL:            https://github.com/vrutkovs/machine-config-operator
