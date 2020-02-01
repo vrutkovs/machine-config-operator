@@ -38,6 +38,7 @@ const (
 var tuneableArgsWhitelist = map[string]bool{
 	"nosmt":                              true,
 	"systemd.unified_cgroup_hierarchy=0": true,
+	"systemd.unified_cgroup_hierarchy=1": true,
 	"mitigations=auto,nosmt":             true,
 }
 
