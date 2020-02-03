@@ -94,7 +94,7 @@ contents:
 
     # default_runtime is the _name_ of the OCI runtime to be used as the default.
     # The name is matched against the runtimes map below.
-    # default_runtime = "runc"
+    default_runtime = "crun"
 
     # If true, the runtime will not use pivot_root, but instead use MS_MOVE.
     # no_pivot = false
@@ -258,6 +258,10 @@ contents:
     # runtime_type = "oci"
     # runtime_root = "/run/runc"
 
+    [crio.runtime.runtimes.crun]
+    runtime_path = ""
+    runtime_type = "oci"
+    runtime_root = "/run/crun"
 
     # Kata Containers is an OCI runtime, where containers are run inside lightweight
     # VMs. Kata provides additional isolation towards the host, minimizing the host attack
