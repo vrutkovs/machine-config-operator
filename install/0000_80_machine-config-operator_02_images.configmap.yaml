@@ -18,4 +18,5 @@ data:
       "haproxyImage": "registry.svc.ci.openshift.org/openshift:haproxy-router",
       "baremetalRuntimeCfgImage": "registry.svc.ci.openshift.org/openshift:baremetal-runtimecfg",
       "oauthProxy": "registry.svc.ci.openshift.org/openshift:oauth-proxy"
+      "etcdQuorumGuard": "registry.svc.ci.openshift.org/openshift:pod"
     }
