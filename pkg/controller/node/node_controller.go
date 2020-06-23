@@ -835,7 +835,7 @@ func maxUnavailable(pool *mcfgv1.MachineConfigPool, nodes []*corev1.Node) (int, 
 	if err != nil {
 		return 0, err
 	}
-	if maxunavail == 0 {
+	if maxunavail == 0 && pool.Status.MachineCount != 1 {
 		maxunavail = 1
 	}
 	if pool.Name == "master" {
