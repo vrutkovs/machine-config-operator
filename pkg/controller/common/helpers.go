@@ -35,6 +35,10 @@ import (
 	mcfgclientset "github.com/openshift/machine-config-operator/pkg/generated/clientset/versioned"
 )
 
+// Supported extensions for platforms
+// const RHCOSSupportedExtensions = []string{"usbguard", "kernel-devel"}
+// const FCOSSupportedExtensions = []string{"okd"}
+
 // MergeMachineConfigs combines multiple machineconfig objects into one object.
 // It sorts all the configs in increasing order of their name.
 // It uses the Ignition config from first object as base and appends all the rest.
@@ -302,20 +306,20 @@ func InSlice(elem string, slice []string) bool {
 	return false
 }
 
-func validateExtensions(exts []string) error {
-	supportedExtensions := []string{"usbguard", "kernel-devel"}
-	invalidExts := []string{}
-	for _, ext := range exts {
-		if !InSlice(ext, supportedExtensions) {
-			invalidExts = append(invalidExts, ext)
-		}
-	}
-	if len(invalidExts) != 0 {
-		return fmt.Errorf("invalid extensions found: %v", invalidExts)
-	}
-	return nil
+// func validateExtensions(exts []string) error {
+// 	supportedExtensions := RHCOSSupportedExtensions;
+// 	invalidExts := []string{}
+// 	for _, ext := range exts {
+// 		if !InSlice(ext, supportedExtensions) {
+// 			invalidExts = append(invalidExts, ext)
+// 		}
+// 	}
+// 	if len(invalidExts) != 0 {
+// 		return fmt.Errorf("invalid extensions found: %v", invalidExts)
+// 	}
+// 	return nil
 
-}
+// }
 
 // ValidateMachineConfig validates that given MachineConfig Spec is valid.
 func ValidateMachineConfig(cfg mcfgv1.MachineConfigSpec) error {
@@ -323,9 +327,9 @@ func ValidateMachineConfig(cfg mcfgv1.MachineConfigSpec) error {
 		return errors.Errorf("kernelType=%s is invalid", cfg.KernelType)
 	}
 
-	if err := validateExtensions(cfg.Extensions); err != nil {
-		return err
-	}
+	// if err := validateExtensions(cfg.Extensions); err != nil {
+	// 	return err
+	// }
 
 	if cfg.Config.Raw != nil {
 		ignCfg, err := IgnParseWrapper(cfg.Config.Raw)
