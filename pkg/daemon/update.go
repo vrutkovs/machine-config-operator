@@ -890,6 +890,15 @@ func validateExtensions(exts []string) error {
 
 }
 
+func hasExtension(config *mcfgv1.MachineConfig, extension string) bool {
+	for _, ext := range config.Spec.Extensions {
+		if ext == extension {
+			return true
+		}
+	}
+	return false
+}
+
 func (dn *Daemon) applyExtensions(oldConfig, newConfig *mcfgv1.MachineConfig) error {
 	extensionsEmpty := len(oldConfig.Spec.Extensions) == 0 && len(newConfig.Spec.Extensions) == 0
 	if (extensionsEmpty) ||
@@ -907,6 +916,22 @@ func (dn *Daemon) applyExtensions(oldConfig, newConfig *mcfgv1.MachineConfig) er
 	}
 
 	args := generateExtensionsArgs(oldConfig, newConfig)
+	// Preinstall OVS, glusterfs and open-vm-tools packages on OKD
+	if dn.OperatingSystem == MachineConfigDaemonOSFCOS {
+		okdExtensions := []string{
+			"glusterfs",
+			"glusterfs-fuse",
+			"open-vm-tools",
+			"NetworkManager-ovs",
+		}
+		for _, ext := range okdExtensions {
+			if !hasExtension(newConfig, ext) {
+				glog.Infof("Automatically added extension %v", ext)
+				args = append(args, "--install", ext)
+			}
+		}
+	}
+
 	glog.Infof("Applying extensions : %+q", args)
 	if err := exec.Command("rpm-ostree", args...).Run(); err != nil {
 		return fmt.Errorf("failed to execute rpm-ostree %+q : %v", args, err)
