@@ -96,6 +96,11 @@ func MergeMachineConfigs(configs []*mcfgv1.MachineConfig, osImageURL string) (*m
 		kargs = append(kargs, cfg.Spec.KernelArguments...)
 	}
 
+	extensions := []string{}
+	for _, cfg := range configs {
+		extensions = append(extensions, cfg.Spec.Extensions...)
+	}
+
 	return &mcfgv1.MachineConfig{
 		Spec: mcfgv1.MachineConfigSpec{
 			OSImageURL:      osImageURL,
@@ -105,6 +110,7 @@ func MergeMachineConfigs(configs []*mcfgv1.MachineConfig, osImageURL string) (*m
 			},
 			FIPS:       fips,
 			KernelType: kernelType,
+			Extensions: extensions,
 		},
 	}, nil
 }

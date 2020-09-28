@@ -175,6 +175,7 @@ type MachineConfigSpec struct {
 
 	// +nullable
 	KernelArguments []string `json:"kernelArguments"`
+	Extensions      []string `json:"extensions"`
 
 	FIPS       bool   `json:"fips"`
 	KernelType string `json:"kernelType"`
