@@ -1091,9 +1091,9 @@ func (dn *Daemon) applyExtensions(oldConfig, newConfig *mcfgv1.MachineConfig) er
 	}
 
 	// Validate extensions allowlist on RHCOS nodes
-	if err := validateExtensions(newConfig.Spec.Extensions); err != nil && dn.os.IsRHCOS() {
-		return err
-	}
+	// if err := validateExtensions(newConfig.Spec.Extensions); err != nil && dn.os.IsRHCOS() {
+	// 	return err
+	// }
 
 	args := dn.generateExtensionsArgs(oldConfig, newConfig)
 	glog.Infof("Applying extensions : %+q", args)
