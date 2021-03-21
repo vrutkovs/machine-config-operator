@@ -4,6 +4,7 @@ contents: |
   [Unit]
   Before=NetworkManager.service
   After=systemd-tmpfiles-setup.service
+  DefaultDependencies=no
   [Mount]
   Where=/etc/NetworkManager/systemConnectionsMerged
   What=overlay
