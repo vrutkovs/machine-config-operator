@@ -3,6 +3,7 @@ enabled: true
 contents: |
   [Unit]
   After=systemd-tmpfiles-setup.service
+  BindsTo=systemd-tmpfiles-setup.service
   [Mount]
   Where=/etc/NetworkManager/system-connections-merged
   What=overlay
