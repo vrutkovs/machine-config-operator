@@ -79,6 +79,17 @@ func run(_ *cobra.Command, args []string) (retErr error) {
 		}
 	}
 
+	// Check to see if we need to tune kernel arguments
+	tuningChanged, err := daemon.UpdateTuningArgs(daemon.KernelTuningFile, daemon.CmdLineFile)
+	if err != nil {
+		return err
+	}
+	// If tuning changes but the oscontainer didn't we still denote we changed
+	// for the reboot
+	if tuningChanged {
+		changed = true
+	}
+
 	if !changed {
 		glog.Info("No changes; already at target oscontainer")
 	}
