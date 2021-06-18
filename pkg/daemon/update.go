@@ -1118,12 +1118,11 @@ func (dn *Daemon) generateExtensionsArgs(oldConfig, newConfig *mcfgv1.MachineCon
 	// TODO: Once the package list has been stabilized, we can make use of the group and add
 	// all the packages required to enable OKD as a single extension.
 	if dn.os.IsFCOS() {
-		for _, ext := range added {
-			extArgs = append(extArgs, "--install", ext)
+		if len(added) > 0 {
+			extArgs = []string{"install", "--allow-inactive"}
+			extArgs = append(extArgs, added...)
 		}
-		for _, ext := range removed {
-			extArgs = append(extArgs, "--uninstall", ext)
-		}
+
 	}
 
 	return extArgs
