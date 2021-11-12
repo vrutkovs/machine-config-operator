@@ -33,14 +33,6 @@ contents:
     ]
     drop_infra_ctr = true
 
-    [crio.runtime.workloads.openshift-builder]
-    activation_annotation = "io.openshift.builder"
-    allowed_annotations = [
-      "io.kubernetes.cri-o.userns-mode",
-      "io.kubernetes.cri-o.Devices"
-    ]
-    [crio.runtime.workloads.openshift-builder.resources]
-
     [crio.image]
     global_auth_file = "/var/lib/kubelet/config.json"
     pause_image = "{{.Images.infraImageKey}}"
