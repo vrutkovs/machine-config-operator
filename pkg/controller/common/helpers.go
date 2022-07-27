@@ -125,6 +125,13 @@ func MergeMachineConfigs(configs []*mcfgv1.MachineConfig, osImageURL string) (*m
 		}
 	}
 
+	// For layering, we want to let the user override OSImageURL again
+	for _, cfg := range configs {
+		if cfg.Spec.OSImageURL != "" {
+			osImageURL = cfg.Spec.OSImageURL
+		}
+	}
+
 	return &mcfgv1.MachineConfig{
 		Spec: mcfgv1.MachineConfigSpec{
 			OSImageURL:      osImageURL,
